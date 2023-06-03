@@ -51,6 +51,10 @@ class LinkedList
   end
 
   def remove_at(index)
+    return nil if index >= size
+    return pop if index == size - 1
+    return self.head = at(1) if index == 0
+
     prev_node = at(index - 1)
     prev_node.next = at(index + 1)
   end
