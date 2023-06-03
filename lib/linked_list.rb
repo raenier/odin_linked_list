@@ -41,6 +41,7 @@ class LinkedList
   def insert_at(value, index)
     return prepend(value) if index == 0
     return append(value) if index == size - 1
+    return nil if index >= size
 
     new_node = Node.new(value)
     next_node = at(index)
