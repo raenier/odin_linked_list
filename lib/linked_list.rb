@@ -49,6 +49,11 @@ class LinkedList
     prev_node.next = new_node
   end
 
+  def remove_at(index)
+    prev_node = at(index - 1)
+    prev_node.next = at(index + 1)
+  end
+
   def pop
     self.tail = at(size - 2)
     tail.next = nil
