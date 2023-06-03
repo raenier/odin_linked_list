@@ -24,4 +24,11 @@ class LinkedList
     tail.next = new_node
     self.tail = new_node
   end
+
+  def size(node = head)
+    return 1 if node.next.nil?
+
+    #recursively traversing the list starting from the head node
+    sum = 1 + size(node.next)
+  end
 end
