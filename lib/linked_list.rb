@@ -38,6 +38,17 @@ class LinkedList
     at(index - 1, node.next)
   end
 
+  def insert_at(value, index)
+    return prepend(value) if index == 0
+    return append(value) if index == size - 1
+
+    new_node = Node.new(value)
+    next_node = at(index)
+    prev_node = at(index - 1)
+    new_node.next = next_node
+    prev_node.next = new_node
+  end
+
   def pop
     self.tail = at(size - 2)
     tail.next = nil
