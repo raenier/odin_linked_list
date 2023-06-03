@@ -50,6 +50,17 @@ class LinkedList
     contains?(value, node.next)
   end
 
+  def find(value)
+    return nil unless contains?(value)
+
+    ctr = 0
+    size.times do |i|
+      break if at(i).value == value
+      ctr += 1
+    end
+    return ctr
+  end
+
   def to_s(node = head)
     return 'Nothing follows' if node.nil?
 
