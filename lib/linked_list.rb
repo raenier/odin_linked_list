@@ -31,4 +31,10 @@ class LinkedList
     #recursively traversing the list starting from the head node
     sum = 1 + size(node.next)
   end
+
+  def at(index, node = head)
+    return node if index == 0
+
+    at(index - 1, node.next)
+  end
 end
