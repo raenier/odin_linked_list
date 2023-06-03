@@ -43,6 +43,13 @@ class LinkedList
     tail.next = nil
   end
 
+  def contains?(value, node=head)
+    return true if value == node.value
+    return false if node.next.nil?
+
+    contains?(value, node.next)
+  end
+
   def to_s(node = head)
     return 'Nothing follows' if node.nil?
 
