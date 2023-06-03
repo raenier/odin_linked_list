@@ -42,4 +42,10 @@ class LinkedList
     self.tail = at(size - 2)
     tail.next = nil
   end
+
+  def to_s(node = head)
+    return 'Nothing follows' if node.nil?
+
+    "(#{node.value}) -> #{to_s(node.next)}"
+  end
 end
