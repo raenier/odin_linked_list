@@ -37,4 +37,9 @@ class LinkedList
 
     at(index - 1, node.next)
   end
+
+  def pop
+    self.tail = at(size - 2)
+    tail.next = nil
+  end
 end
